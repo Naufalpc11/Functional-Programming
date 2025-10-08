@@ -13,8 +13,8 @@ Y = lambda f: (lambda x: f(lambda v: x(x)(v)))(lambda x: f(lambda v: x(x)(v)))
 # Recursive sum function
 SUM = Y(lambda f: lambda n: 0 if n == 0 else n + f(n - 1))
 
-print(SUM(5))  # 15 (5+4+3+2+1+0)
-print(SUM(10)) # 55
+print(SUM(5))
+print(SUM(10))
 
 # Soal nomor 5
 Y = lambda f: (lambda x: f(lambda v: x(x)(v)))(lambda x: f(lambda v: x(x)(v)))
@@ -27,8 +27,8 @@ LEN = lambda s: len(s)
 # Reverse function using Y-Combinator
 REVERSE = Y(lambda f: lambda s: "" if LEN(s) == 0 else f(TAIL(s)) + HEAD(s))
 
-print(REVERSE("kenapa"))  # "apanek"
-print(REVERSE("abcde"))   # "edcba"
+print(REVERSE("kenapa"))
+print(REVERSE("abcde"))
 
 #Soal nomor 6
 from functools import reduce
@@ -65,11 +65,11 @@ def fib_fast(n):
 
 #Testing performanya
 start = time.time()
-print(fib_slow(35))  # Sangat lambat (~5 detik)
+print(fib_slow(35))
 print(f"Without cache: {time.time() - start:.4f}s")
 
 start = time.time()
-print(fib_fast(35))  # Sangat cepat (~0.0001 detik)
+print(fib_fast(35))
 print(f"With cache: {time.time() - start:.4f}s")
 
 #Cek info cache-nya
